@@ -1,0 +1,255 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="Hadeel Alolayan.png" type="image/png">
+  <title>Graduation Project</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: url('bg.png') no-repeat center center fixed; 
+      background-size: cover; 
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 40px auto;
+      max-width: 1200px;
+    }
+
+    .full-width {
+      grid-column: span 2;
+    }
+
+    .section {
+      background-color: rgba(30, 30, 30, 0.8); 
+      border: 1px solid #333;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.6);
+    }
+
+    .section img {
+      width: 80%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Oswald', sans-serif;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      color: #f5f5f5;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #e0e0e0;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #b0b0b0;
+    }
+
+   
+    .circle-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .circle:hover {
+      background-color: #fff;
+      color: #b0b0b0;
+      transform: scale(1.1);
+    }
+
+   
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    
+    .home-button {
+      display: inline-block;
+      padding: 12px 25px;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fff;
+      background-color: #1c1c1c;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .home-button:hover {
+      background-color: #0d0d0d;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section">
+    <h2>Molière Clinic - Graduation Project </h2>
+    <p>
+      This project represents a culmination of knowledge and skills acquired throughout the academic journey. Explore the sections below to learn more about the project's components.
+    </p>
+  </div>
+
+  <div class="grid">
+   
+    <div class="section full-width">
+      <br><h2>Molière Clinic Overview</h2>
+      <p>
+        This section explains the motivation behind creating the Molière Clinic's official website, showcasing the project's goals and purpose. The design is based on the clinic's brand, using HTML for structure, CSS for styling, and JavaScript for interactivity. Testing was conducted with medical staff and users, followed by feedback collection.
+      </p><br><br>
+      <h2>Objectives</h2>
+      <p>Key goals are outlined:
+        To develop a user-friendly, accessible website for booking appointments and navigating services.
+        To integrate a reliable appointment booking system.
+        To present an up-to-date list of prices for treatments.
+        </p><br><br>
+        <h2>Tools</h2> 
+        <p>Lists software and hardware:
+          Software: HTML, CSS, JavaScript, PHP, and database tools.
+          Hardware: Specifications for the computer used, including processor, RAM, and storage.</p>
+    </div>
+
+   
+    <div class="section">
+      <h2>Clinic summary</h2>
+      <img src="Molier 0 .jpg" alt="Main Interface">
+      <p>Summary of the Molière Clinic website project, outlining objectives and methodology.     </p>
+    </div>
+
+    
+    <div class="section">
+      <h2>Showcase of Design</h2>
+      <img src="Molier 1.jpg" alt="Additional Features">
+      <p>
+        Portfolio display showcasing the design process and final output for the Molière Clinic website.
+      </p>
+    </div>
+
+    
+    <div class="section full-width">
+     <br> <h2>Molière Clinic - Results</h2>
+      <p>The homepage provides the first interface for users, designed with aesthetic visuals and clear navigation.
+        Represents the clinic's branding and values.</p><br><br>
+        <h2>Admin Home Page</h2>
+        <p>A dedicated interface for administrators to manage appointments, users, and other backend functions. Ensures ease of access and control for the clinic staff.
+        This feature highlights how the PHP backend supports the database and dynamic functionalities like login and user management.
+      </p><br><br>
+      <h2>Create Account </h2>
+      <p>A form where users can register by providing necessary details like name, contact information, and a password. A crucial step to access personalized services.</p>
+    </div>
+    <div class="section full-width">
+        <h2>Login Page</h2>
+        <p>
+          The Login Page is a key feature of the Molière Clinic website, designed to provide secure and simple access for users and administrators. It includes fields for entering a username and password, a "Remember Me" checkbox for convenience, and a link for new users to create an account. The page is styled with a clean and user-friendly design that reflects the clinic's branding, ensuring ease of use across devices. It prioritizes security with features like encrypted connections and password protection, creating a safe and accessible experience for all users.</p>
+      </div>
+  
+     
+      <div class="section">
+        <h2>Login Form</h2>
+        <img src="login.png" alt="Login Page">
+        <p>
+         A secure and straightforward login form with "Remember Me" functionality for easy access.
+        </p>
+      </div>
+  </div>
+  <div class="grid">
+    <div class="section full-width">
+      <h2>php MyAdmin </h2>
+      <img src="php.jpg" alt="Database Structure">
+      <p>
+        The database schema organizes patient information, appointments, and service details for efficient retrieval and updates.
+       </p>
+    </div>
+
+    <div class="section">
+      <h2>Database</h2>
+      <p>
+       The database for the Molière Clinic website is designed using PHP and MySQL to efficiently manage and organize data. It includes structured tables to store user information, appointment details, and admin records. The design ensures secure data handling with proper relationships between tables, enabling seamless retrieval and updates. The database supports essential functionalities like user registration, login authentication, appointment booking, and admin management. With a focus on reliability and scalability, the database plays a vital role in maintaining smooth operations and ensuring data integrity for the clinic’s website.
+      </p>
+    </div>
+
+<div class="section">
+    <a href="Had.html" class="home-button" title="Back to Home Page">
+      &#x2190;
+    </a>
+  </div>
+
+  <script>
+   
+    function updateProgress(element) {
+      const currentProgress = element.innerText;
+      alert(`You clicked on progress: ${currentProgress}`);
+    }
+  </script>
+</body>
+</html>
