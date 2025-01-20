@@ -3,383 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hadeel Al-Olayan - Portfolio</title>
-    <link rel="icon" href="Hadeel Alolayan.png" type="image/png">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>To-Do List</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23fbaed2'/></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4C+6Mrj78kf20NsBz7Sn07wQ3xUp5q6hP4sf5qzC2ttX39Y6TP1KH75BwksmCf86vc6jQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        :root {
+            --background-light: #F4EEDD;
+            --text-light: #333;
+            --card-light: #FFFFFF;
+            --border-light: #C6CFEC;
+            --button-light: #C6CFEC;
+            --button-hover-light: #A8B4DF;
+            --completed-light: #F4EEDD;
+
+            --background-dark: #2E2E2E;
+            --text-dark: #F4EEDD;
+            --card-dark: #3E3E3E;
+            --border-dark: #A8B4DF;
+            --button-dark: #6A8FDB;
+            --button-hover-dark: #5C7FC4;
+            --completed-dark: #555555;
+        }
+
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #121212;
-            color: #ddd;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: var(--background-light);
+            color: var(--text-light);
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            background-color: var(--card-light);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            width: 90%;
+            max-width: 400px;
+            transition: background-color 0.3s, color 0.3s;
         }
 
-        header {
-    background: url('Hadeel Al-Olayan.png') no-repeat center center;
-    background-size: cover;
-    color: #fff;
-    text-align: center;
-    padding: 50px 0;
-}
-
-
-        header h1 {
-            font-size: 3em;
-            margin: 0;
-            font-weight: bold;
-            color: #f2f2f2;
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
         }
 
-        header p {
-            font-size: 1.2em;
-            margin: 10px 0;
-            color: #bbb;
+        .header h1 {
+            font-size: 24px;
+            color: var(--border-light);
         }
 
-        .btn-download {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: #444;
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
+        .toggle-button button {
+            padding: 10px;
+            border: none;
+            background-color: var(--button-light);
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
             transition: background-color 0.3s;
         }
 
-        .btn-download:hover {
-            background: #666;
+        .toggle-button button:hover {
+            background-color: var(--button-hover-light);
         }
 
-        nav {
-            background: #222;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        .date-display {
+            font-size: 15px;
+            color: var(--button-light);
+            margin-bottom: 10px;
+            text-align: center;
         }
 
-        nav ul {
-            margin: 0;
-            padding: 0;
+        .task-input {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .task-input input {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid var(--border-light);
+            border-radius: 6px 0 0 6px;
+            outline: none;
+        }
+
+        .task-input button {
+            padding: 10px 20px;
+            border: none;
+            background-color: var(--button-light);
+            color: white;
+            border-radius: 0 6px 6px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .task-input button:hover {
+            background-color: var(--button-hover-light);
+        }
+
+        .task-list {
             list-style: none;
+            padding: 0;
+        }
+
+        .task-list li {
             display: flex;
             justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0;
-        }
-
-        nav ul li a {
-            color: #ddd;
-            text-decoration: none;
-            padding: 14px 20px;
-            display: block;
-            transition: background-color 0.3s ease;
-        }
-
-        nav ul li a:hover,
-        nav ul li a.active {
-            background-color: #444;
-            color: #fff;
-        }
-
-       
-        section {
-            padding: 50px 0;
-            border-bottom: 1px solid #333;
-        }
-
-        h2 {
-            font-size: 2em;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #f2f2f2;
-            text-align: left;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 3px;
-            background: #444;
-        }
-
-        p {
-            color: #ccc;
-            line-height: 1.8;
-        }
-
-        ul {
-            padding: 0;
-            list-style: none;
-            margin: 0 0 20px;
-        }
-
-        ul li {
+            align-items: center;
+            padding: 10px;
+            border: 2px solid var(--border-light);
+            border-radius: 6px;
             margin-bottom: 10px;
-            color: #bbb;
-        }
-
-       
-        #portfolio {
-            background-color: #1a1a1a;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .portfolio-item {
-            background-color: #222;
-            border-radius: 10px;
-            padding: 20px;
+            background-color: var(--card-light);
+            transition: background-color 0.3s, color 0.3s;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+        .task-list li .task-text {
+            flex: 1;
+            color: var(--text-light);
+            text-align: center;
         }
 
-        .portfolio-icon {
-            font-size: 3em;
-            color: #b1adad;
-            margin-bottom: 15px;
+        .task-list li.completed .task-text {
+            text-decoration: line-through;
+            color: var(--completed-light);
         }
 
-        .portfolio-item h3 {
-            font-size: 1.5em;
-            color: #f2f2f2;
-            margin-bottom: 10px;
+        .task-list li .btn-group {
+            display: flex;
+            gap: 10px;
         }
 
-        .portfolio-item p {
-            font-size: 1em;
-            color: #ccc;
-            margin-bottom: 15px;
+        .task-list li .btn-group button {
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
         }
 
-        .portfolio-item a {
-            color: #fff;
+        .task-list li .btn-group .delete-btn {
+            background-color: #FF6B6B;
+            color: white;
+        }
+
+        .task-list li .btn-group .complete-btn {
+            background-color: #D7E3AB;
+            color: white;
+        }
+
+        .progress {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 14px;
             font-weight: bold;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .portfolio-item a:hover {
+            background-color: #B8E0A0;
+            padding: 10px;
+            border-radius: 6px;
             color: #fff;
         }
 
-       
-        .portfolio-item a::after {
-            content: '↓'; 
-            display: block;
-            font-size: 1.2em;
-            color: #a69c68;
-            opacity: 0; 
-            transition: opacity 0.3s ease;
-            margin-top: 5px;
+        .dark-mode {
+            --background-light: var(--background-dark);
+            --text-light: var(--text-dark);
+            --card-light: var(--card-dark);
+            --border-light: var(--border-dark);
+            --button-light: var(--button-dark);
+            --button-hover-light: var(--button-hover-dark);
+            --completed-light: var(--completed-dark);
         }
-
-        .portfolio-item a:hover::after {
-            opacity: 1; 
-        }
-
-        footer {
-            background: #1c1c1c;
-            color: #bbb;
-            text-align: center;
-            padding: 20px 0;
-        }
-    
-
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Hadeel Al-Olayan</h1>
-            <p>Results-driven IT fresh graduate with a passion for leveraging technology for business success.</p>
-            <a href="resume.pdf" class="btn-download" download>Download My Resume</a>
-        </div>
-    </header>
-
-    <nav>
-      <ul>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#portfolio">Portfolio</a></li> 
-          <li><a href="#education">Education</a></li> 
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#certifications">Certifications</a></li>
-          <li><a href="#contact">Contact</a></li>
-      </ul>
-  </nav>
-  
-
-    <section id="about" class="container">
-        <h2>About Me</h2>
-        <p>A blend of creativity and technical expertise defines my approach to information technology. With a solid foundation in web development, application design, and digital transformation, this portfolio showcases my ability to craft intuitive, functional, and visually appealing solutions. Designed and built independently using HTML, CSS, and JavaScript, it reflects both my skill set and dedication to excellence.
-
-        <br><br>
-        Graduating from Princess Nora University, I have gained valuable experience across roles such as Game Developer, SharePoint Administrator, and Data Operations Coordinator. My proficiency spans front-end development, programming languages like JavaScript, PHP, and C#, and platforms like SharePoint and PowerApps.<br> These experiences have equipped me to deliver innovative and impactful solutions tailored to diverse business needs.
-            
-            With a focus on innovation, problem-solving, and continuous learning, I aim to leverage my skills in collaborative environments that drive success. I'm ready to contribute to forward-thinking projects that make a difference.</p>
-    </section>
-
-    <section id="portfolio" class="container">
-        <h2>Portfolio</h2>
-        <p>Discover a selection of my key projects showcasing my skills and creativity.</p>
-        <div class="portfolio-grid">
-         
-            <div class="portfolio-item">
-                <div class="portfolio-icon">
-                    <i class="fas fa-gamepad"></i>
-                </div>
-                <h3>Takhayer Game</h3>
-                <p>Designed and developed a Swift-based game during my training at the Apple Academy.</p>
-                <a href="takhayer-game.html"><br>View Project</a>
-            </div>
-     
-            <div class="portfolio-item">
-                <div class="portfolio-icon">
-                    <i class="fas fa-tasks"></i>
-                </div>
-                <h3>To-Do List</h3>
-                <p>My first tool, developed using foundational programming languages, simplifies task management.</p>
-                <a href="todo-list.lnk">Open website</a>
-            </div>
-           
-            <div class="portfolio-item">
-                <div class="portfolio-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h3>SharePoint | Recruitment Tracker</h3>
-                <p>A PowerApp designed to streamline recruitment processes using SharePoint integration.</p>
-                <a href="recruitment-tracker.html">View Project</a>
-            </div>
-          
-            <div class="portfolio-item">
-                <div class="portfolio-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <h3>Graduation Project</h3>
-                <p>Built a clinic website with features for appointment booking, patient record management, and responsive design.                    .</p>
-                <a href="graduation-project.html">View Project</a>
+    <div class="container">
+        <div class="header">
+            <h1>To-Do List</h1>
+            <div class="toggle-button">
+                <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
             </div>
         </div>
-    </section>
-
-    <section id="education" class="container">
-        <h2>Education</h2>
-        <ul>
-            <li><strong>Diploma of Information Technology</strong>, Princess Nora University (2022 - 2024)</li>
-        </ul>
-    </section>
-
-    <section id="skills" class="container">
-        <h2>Technical Skills</h2>
-        <ul>
-            <li>iOS Development: Swift, UIKit/SwiftUI</li>
-            <li>Web Development: HTML, CSS, JavaScript, PHP and SQL.</li>
-            <li>UI/UX Design: Figma</li>
-            <li>SharePoint and PowerApps: Low-code app development, SharePoint integration.</li>
-           
-
-            <h2>Soft Skills:</h2>
-            <li> Problem-Solving: Analytical thinking, debugging, and troubleshooting.</li>
-            <li>Team Collaboration: Experience working in teams, communication, and feedback.</li>
-
-        </ul>
-    </section>
-
-    <section id="certifications" class="container">
-        <h2>Certifications</h2>
-        <ul>
-            <li>Apple Gaming Foundation (July 21st, 2024 to Aug 29th,2024) </li>
-            <li>Digital Transformation Training Camp (2024) - Experts Vision Consulting</li>
-            <li>Standard Test for the Technology Program - Princess Nora University</li>
-            <li>Misk Career Essentials Program - Misk Skills</li>
-        </ul>
-    </section>
-
-    <section id="contact" class="container">
-        <h2>Contact</h2>
-        <div style="display: flex; flex-direction: column; gap: 15px; font-size: 1.1em;">
-        
-            <div>
-                <strong>Phone:</strong> 
-                <a href="#" onclick="copyToClipboard('+966500598053')">+966 50 059 8053</a>
-            </div>
-          
-            <div>
-                <strong>Email:</strong> 
-                <a href="#" onclick="copyToClipboard('alolayanhadeel@gmail.com')">alolayanhadeel@gmail.com</a>
-            </div>
-      
-            <div>
-                <strong>GitHub:</strong> 
-                <a href="https://github.com/HadeelAlolayan" target="_blank">Visit My GitHub</a>
-            </div>
-       
-            <div>
-                <strong>LinkedIn:</strong> 
-                <a href="https://www.linkedin.com/in/hadeel-alolayan-4b4bb4275" target="_blank">Connect on LinkedIn</a>
-            </div>
+        <div class="date-display" id="dateDisplay"></div>
+        <div class="task-input">
+            <input type="text" id="taskInput" placeholder="Add a new task..." onkeypress="if(event.key === 'Enter') addTask();">
+            <button onclick="addTask()">Add</button>
         </div>
-    </section>
-    
+        <div class="progress" id="progressDisplay">0 of 0 tasks completed</div>
+        <ul class="task-list" id="taskList"></ul>
+    </div>
+
     <script>
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                alert(text + " has been copied!");
-            }).catch(err => {
-                alert("Failed to copy: " + err);
-            });
+        function displayDate() {
+            const dateDisplay = document.getElementById('dateDisplay');
+            const today = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            dateDisplay.textContent = today.toLocaleDateString('en-US', options);
         }
-    </script>
-    
-    <style>
-      
-        #contact a {
-            color: #a69c68; 
-            text-decoration: none;
-            font-weight: bold; 
-            transition: color 0.3s ease; 
+
+        function updateProgress() {
+            const tasks = document.querySelectorAll('#taskList li');
+            const completedTasks = document.querySelectorAll('#taskList li.completed');
+            const progressDisplay = document.getElementById('progressDisplay');
+            progressDisplay.textContent = `${completedTasks.length} of ${tasks.length} tasks completed`;
         }
-    
-        #contact a:hover {
-            color: #fff; 
+
+        function addTask() {
+            const taskInput = document.getElementById('taskInput');
+            const taskText = taskInput.value.trim();
+
+            if (taskText === '') {
+                alert('Please enter a task.');
+                return;
+            }
+
+            const taskList = document.getElementById('taskList');
+            const listItem = document.createElement('li');
+
+            listItem.innerHTML = `
+                <span class="task-text">${taskText}</span>
+                <div class="btn-group">
+                    <button class="complete-btn" onclick="toggleComplete(this)">Complete</button>
+                    <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+                </div>
+            `;
+
+            taskList.appendChild(listItem);
+            taskInput.value = '';
+            updateProgress();
         }
-    </style>
-     
-    <script>
-        document.querySelectorAll('nav ul li a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+
+        function toggleComplete(button) {
+            const taskItem = button.parentElement.parentElement;
+            taskItem.classList.toggle('completed');
+            if (taskItem.classList.contains('completed')) {
+                button.textContent = "Uncomplete";
+            } else {
+                button.textContent = "Complete";
+            }
+            updateProgress();
+        }
+
+        function deleteTask(button) {
+            const taskItem = button.parentElement.parentElement;
+            taskItem.remove();
+            updateProgress();
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        displayDate();
     </script>
 </body>
 </html>
