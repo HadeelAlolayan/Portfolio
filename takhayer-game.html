@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAKHAER | Modern Showcase</title>
+  
+   
+    <link rel="icon" href="Hadeel Alolayan.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- Using Poppins -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAKHAER | Modern Showcase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- Using Poppins -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif; 
+      margin: 0;
+      padding: 0;
+      background-color: #121212; 
+      color: #d9d9d9; 
+      line-height: 1.6;
+    }
+
+    a {
+      color: #fff; 
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #fff; 
+    }
+
+    header {
+      background: url('idk.png') no-repeat center center;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      padding: 55px 0;
+    }
+
+    header h1 {
+      font-family: 'Poppins', sans-serif; 
+      color: #e0e0e0;
+      padding: 22px;
+      font-size: 2.5rem;
+      font-weight: 600; 
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    header .cta {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #1c1c1c;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    header .cta:hover {
+      background-color: #0d0d0d;
+    }
+
+    section {
+      padding: 50px 20px;
+    }
+
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .divider {
+      width: 80%;
+      margin: 30px auto;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #fff, transparent);
+      border: none;
+    }
+
+    .about {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #b3b3b3;
+    }
+
+    .experience {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .experience-card {
+      flex: 1 1 calc(33.333% - 20px);
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    }
+
+    .experience-card h3 {
+      color: #ffffff;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .experience-card p {
+      color: #b3b3b3;
+      font-size: 1rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-card {
+      position: relative;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .gallery-card .caption {
+      padding: 15px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      color: #b3b3b3;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+      position: relative; 
+    }
+
+    .back-button {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background-color: rgba(255, 255, 255, 0.1); 
+      border-radius: 8px; 
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .back-button:hover {
+      background-color: rgba(255, 255, 255, 0.3); 
+    }
+
+    .back-button::before {
+      content: "←"; 
+      font-size: 24px;
+      color: white; 
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1> Developed on Apple’s Gaming Foundation</h1>
+  <p>Blending Innovation and Tradition</p>
+  <button class="cta" onclick="document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });">Know More</button>
+</header>
+
+<hr class="divider">
+
+<section>
+  <h2 class="section-title">About Takhayer Game</h2>
+  <div class="about">
+    <p>
+      Saudi Guessing Game
+    </p>
+    <p>
+      Takhayer is a unique project that combines cultural heritage with cutting-edge technology.
+    </p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section>
+  <h2 class="section-title">My Experience</h2>
+  <div class="experience">
+    <div class="experience-card">
+      <h3>Exploring Swift</h3>
+      <p>Diving into Swift opened doors to a new world of development possibilities...</p>
+    </div>
+    <div class="experience-card">
+      <h3>Integrating Culture</h3>
+      <p>Takhayer embodies the spirit of Saudi culture through meticulous attention...</p>
+    </div>
+    <div class="experience-card">
+      <h3>Technical Challenges</h3>
+      <p>Developing Takhayer was an opportunity to overcome complex technical hurdles...</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2 class="section-title">Gallery</h2>
+  <div class="gallery">
+    <div class="gallery-card">
+      <img src="photo_5780388354322450062_y.jpg" alt="TAKHAER ">
+      <div class="caption">Takhayer Game</div>
+    </div>
+    <div class="gallery-card">
+      <img src="photo_5780388354322450063_y.jpg" alt="TAKHAER ">
+      <div class="caption">Takhayer Game</div>
+    </div>
+    <div class="gallery-card">
+      <img src="photo_5780388354322450064_y.jpg" alt="Certificate">
+      <div class="caption">Apple Developer Academy Certificate</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="had.html" class="back-button" title="Back to Home"></a>
+  <p>&copy; 2024 Takhayer.  Hadeel Al-Olayan</p>
+</footer>
+
+</body>
+</html>
